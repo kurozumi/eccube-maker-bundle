@@ -3,8 +3,8 @@
 namespace <?= $namespace; ?>;
 
 use <?= $entity_full_class_name; ?>;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Eccube\Repository\AbstractRepository;
 
 /**
  * @method <?= $entity_class_name; ?>|null find($id, $lockMode = null, $lockVersion = null)
@@ -12,7 +12,7 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method <?= $entity_class_name; ?>[]    findAll()
  * @method <?= $entity_class_name; ?>[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class <?= $class_name; ?> extends ServiceEntityRepository
+class <?= $class_name; ?> extends AbstractRepository
 {
     public function __construct(RegistryInterface $registry)
     {

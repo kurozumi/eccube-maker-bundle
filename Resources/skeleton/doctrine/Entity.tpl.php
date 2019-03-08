@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 <?php endif ?>
  * @ORM\Entity(repositoryClass="<?= $repository_full_class_name ?>")
  */
-class <?= $class_name."\n" ?>
+class <?= $class_name."\n" ?> extends \Eccube\Entity\AbstractEntity
 {
     /**
      * @ORM\Id()
