@@ -33,7 +33,6 @@ final class EntityClassGenerator
             'Repository\\',
             'Repository'
         );
-        var_dump($entityClassDetails->getFullName());
 
         $entityPath = $this->generator->generateClass(
             $entityClassDetails->getFullName(),

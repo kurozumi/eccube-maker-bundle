@@ -28,7 +28,7 @@ use Symfony\Bundle\MakerBundle\Generator;
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
  * @author Ryan Weaver <weaverryan@gmail.com>
  */
-final class MakeController extends AbstractMaker
+final class EccubeMakeController extends AbstractMaker
 {
     public static function getCommandName(): string
     {

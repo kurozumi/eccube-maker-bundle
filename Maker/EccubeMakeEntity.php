@@ -43,7 +43,7 @@ use Plugin\Maker4\Doctrine\EntityClassGenerator;
  * @author Ryan Weaver <weaverryan@gmail.com>
  * @author Kévin Dunglas <dunglas@gmail.com>
  */
-final class MakeEntity extends AbstractMaker implements InputAwareMakerInterface
+final class EccubeMakeEntity extends AbstractMaker implements InputAwareMakerInterface
 {
     private $fileManager;
     private $doctrineHelper;
