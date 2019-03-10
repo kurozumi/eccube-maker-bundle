@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugin\Maker4;
+namespace Plugin\EccubeMakerBundle;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 

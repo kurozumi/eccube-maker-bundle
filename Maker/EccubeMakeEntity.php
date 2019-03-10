@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker4\Maker;
+namespace Plugin\EccubeMakerBundle\Maker;
 
 use Symfony\Bundle\MakerBundle\Maker\AbstractMaker;
 use ApiPlatform\Core\Annotation\ApiResource;
@@ -36,7 +36,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
-use Plugin\Maker4\Doctrine\EntityClassGenerator;
+use Plugin\EccubeMakerBundle\Doctrine\EntityClassGenerator;
 
 /**
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>

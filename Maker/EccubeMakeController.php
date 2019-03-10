@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\Maker4\Maker;
+namespace Plugin\EccubeMakerBundle\Maker;
 
 use Symfony\Bundle\MakerBundle\Maker\AbstractMaker;
 use Doctrine\Common\Annotations\Annotation;
