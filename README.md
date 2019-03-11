@@ -11,6 +11,7 @@ app/Plugin内にcloneすれば多分動くはずです。
 
 ```
 bin/console eccube:plugin:install --code EccubeMakerBundle
+bin/console eccube:plugin:enable --code EccubeMakerBundle
 ```
 
 ## コマンド
@@ -29,3 +30,9 @@ entityファイル作るときはゲッターセッターか書かなくて良�
 ## SymfonyのMakerBundleについて
 
 SymfonyのMakerBundleのmakeコマンドで生成したファイルもCustomizeディレクトリに出力されます。
+
+個人的にはSubscriberを多用するので、以下のコマンドも便利かと思います。
+
+```
+bin/console make:subscriber
+```
