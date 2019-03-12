@@ -19,17 +19,17 @@ bin/console eccube:plugin:enable --code EccubeMakerBundle
 このプラグインをインストールして追加されるコマンドは以下のとおりです。
 
 ```
-eccube:make:controller  
-eccube:make:entity
+bin/console eccube:make:controller  
+bin/console eccube:make:entity
 ```
 
 コマンドを実行するとウィザードが開始され、質問に答えていくとCustomizeディレクトに雛形のファイルが生成されます。
 
-entityファイル作るときはゲッターセッターか書かなくて良いので便利です。
+Entityファイル作るときはゲッターセッターを書かなくて良いので便利です。
 
 ## SymfonyのMakerBundleについて
 
-SymfonyのMakerBundleのmakeコマンドで生成したファイルもCustomizeディレクトリに出力されます。
+SymfonyのMakerBundleのmakerコマンドで生成したファイルもCustomizeディレクトリに出力されます。
 
 個人的にはSubscriberを多用するので、以下のコマンドも便利かと思います。
 
