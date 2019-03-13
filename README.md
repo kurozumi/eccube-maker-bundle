@@ -36,3 +36,20 @@ SymfonyのMakerBundleのmakerコマンドで生成したファイルもCustomize
 ```
 bin/console make:subscriber
 ```
+
+## 出力場所を指定する方法
+
+開発しているプラグインでmakerコマンドを使用したい場合はservices.ymlのroot_namespaceを変更して下さい
+
+services.ymlの場所
+
+```
+EccubeMakerBundle/Resource/config/services.yml
+```
+
+プラグインコードがサンプルの場合
+
+```
+maker:
+    root_namespace: 'Plugin\Sample'
+```
