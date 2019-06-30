@@ -53,3 +53,8 @@ EccubeMakerBundle/Resource/config/services.yml
 maker:
     root_namespace: 'Plugin\Sample'
 ```
+
+## 本番環境でのエラー
+
+本番環境ではmakerバンドルが適用されないのでエラーが発生します。  
+本番環境へ切り替える場合は、プラグインに同梱されているservices.ymlに記述されている内容をコメントアウトして下さい。
