@@ -75,7 +75,7 @@ final class EccubeMakeEntity extends AbstractMaker implements InputAwareMakerInt
             ->addOption('api-resource', 'a', InputOption::VALUE_NONE, 'Mark this class as an API Platform resource (expose a CRUD API for it)')
             ->addOption('regenerate', null, InputOption::VALUE_NONE, 'Instead of adding new fields, simply generate the methods (e.g. getter/setter) for existing fields')
             ->addOption('overwrite', null, InputOption::VALUE_NONE, 'Overwrite any existing getter/setter methods')
-            ->setHelp(file_get_contents(__DIR__.'/../Resources/help/MakeEntity.txt'))
+            ->setHelp(file_get_contents(__DIR__.'/../Resource/help/MakeEntity.txt'))
         ;
 
         $inputConf->setArgumentAsNonInteractive('name');

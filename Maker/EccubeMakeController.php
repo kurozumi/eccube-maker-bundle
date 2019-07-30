@@ -41,7 +41,7 @@ final class EccubeMakeController extends AbstractMaker
             ->setDescription('Creates a new controller class')
             ->addArgument('controller-class', InputArgument::OPTIONAL, sprintf('Choose a name for your controller class (e.g. <fg=yellow>%sController</>)', Str::asClassName(Str::getRandomTerm())))
             ->addOption('no-template', null, InputOption::VALUE_NONE, 'Use this option to disable template generation')
-            ->setHelp(file_get_contents(__DIR__.'/../Resources/help/MakeController.txt'))
+            ->setHelp(file_get_contents(__DIR__.'/../Resource/help/MakeController.txt'))
         ;
     }
 
@@ -57,7 +57,7 @@ final class EccubeMakeController extends AbstractMaker
         $templateName = Str::asFilePath($controllerClassNameDetails->getRelativeNameWithoutSuffix()).'/index.html.twig';
         $controllerPath = $generator->generateController(
             $controllerClassNameDetails->getFullName(),
-            __DIR__.'/../Resources/skeleton/controller/Controller.tpl.php',
+            __DIR__.'/../Resource/skeleton/controller/Controller.tpl.php',
             [
                 'route_path' => Str::asRoutePath($controllerClassNameDetails->getRelativeNameWithoutSuffix()),
                 'route_name' => Str::asRouteName($controllerClassNameDetails->getRelativeNameWithoutSuffix()),
@@ -70,7 +70,7 @@ final class EccubeMakeController extends AbstractMaker
         if ($this->isTwigInstalled() && !$noTemplate) {
             $generator->generateFile(
                 'app/template/default/'.$templateName,
-                'controller/twig_template.tpl.php',
+                __DIR__.'/../Resource/skeleton/controller/twig_template.tpl.php',
                 [
                     'controller_path' => $controllerPath,
                     'root_directory' => $generator->getRootDirectory(),
