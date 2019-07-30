@@ -14,9 +14,9 @@ use Doctrine\ORM\Mapping as ORM;
 class <?= $class_name; ?> extends \Eccube\Entity\AbstractEntity
 {
     /**
+    * @ORM\Column(name="id", type="integer", options={"unsigned":true})
     * @ORM\Id()
-    * @ORM\GeneratedValue()
-    * @ORM\Column(type="integer")
+    * @ORM\GeneratedValue(strategy="IDENTITY")
     */
     private $id;
 
