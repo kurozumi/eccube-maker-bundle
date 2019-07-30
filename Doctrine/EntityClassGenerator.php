@@ -36,7 +36,7 @@ final class EntityClassGenerator
 
         $entityPath = $this->generator->generateClass(
             $entityClassDetails->getFullName(),
-            __DIR__.'/../Resources/skeleton/doctrine/Entity.tpl.php',
+            __DIR__.'/../Resource/skeleton/doctrine/Entity.tpl.php',
             [
                 'repository_full_class_name' => $repoClassDetails->getFullName(),
                 'api_resource' => $apiResource,
@@ -46,7 +46,7 @@ final class EntityClassGenerator
         $entityAlias = strtolower($entityClassDetails->getShortName()[0]);
         $this->generator->generateClass(
             $repoClassDetails->getFullName(),
-            __DIR__.'/../Resources/skeleton/doctrine/Repository.tpl.php',
+            __DIR__.'/../Resource/skeleton/doctrine/Repository.tpl.php',
             [
                 'entity_full_class_name' => $entityClassDetails->getFullName(),
                 'entity_class_name' => $entityClassDetails->getShortName(),
