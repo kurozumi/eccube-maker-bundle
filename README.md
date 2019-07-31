@@ -28,7 +28,7 @@ bin/console eccube:make:trait
 
 Entityファイル作るときはゲッターセッターを書かなくて良いので便利です。
 
-## Eccube4のEntityを拡張出来るTraitの自動生成も実装しました
+## Eccube4のEntityを拡張出来るTraitの自動生成
 
 ```
 bin/console eccube:make:trait
