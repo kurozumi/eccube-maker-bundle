@@ -21,15 +21,25 @@ bin/console eccube:plugin:enable --code EccubeMakerBundle
 ```
 bin/console eccube:make:controller  
 bin/console eccube:make:entity
+bin/console eccube:make:trait
 ```
 
 コマンドを実行するとウィザードが開始され、質問に答えていくとCustomizeディレクトに雛形のファイルが生成されます。
 
 Entityファイル作るときはゲッターセッターを書かなくて良いので便利です。
 
+## Eccube4のEntityを拡張出来るTraitの自動生成も実装しました
+
+```
+bin/console eccube:make:trait
+```
+
+上記コマンドを実行するとEntityファイルを生成するときと同様の手順でEccube4のEntity拡張用のTraitを自動生成できます。
+
 ## SymfonyのMakerBundleについて
 
 SymfonyのMakerBundleのmakerコマンドで生成したファイルもCustomizeディレクトリに出力されます。
+
 
 個人的にはSubscriberを多用するので、以下のコマンドも便利かと思います。
 

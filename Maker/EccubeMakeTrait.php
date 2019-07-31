@@ -72,7 +72,7 @@ final class EccubeMakeTrait extends AbstractMaker implements InputAwareMakerInte
     public function configureCommand(Command $command, InputConfiguration $inputConf)
     {
         $command
-            ->setDescription('Creates or updates a Doctrine entity class, and optionally an API Platform resource')
+            ->setDescription('Creates or updates a Eccube entity trait')
             ->addArgument('name', InputArgument::OPTIONAL, sprintf('Class name of the entity to create or update (e.g. <fg=yellow>%s</>)', Str::asClassName(Str::getRandomTerm())))
             ->addOption('overwrite', null, InputOption::VALUE_NONE, 'Overwrite any existing getter/setter methods')
             ->setHelp(file_get_contents(__DIR__.'/../Resource/help/MakeTrait.txt'))
