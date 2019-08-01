@@ -32,6 +32,10 @@ Entityファイル作るときはゲッターセッターを書かなくて良�
 
 ```
 bin/console eccube:make:trait
+
+or
+
+bin/console eccube:make:trait Eccube\Entity\Product
 ```
 
 上記コマンドを実行するとEntityファイルを生成するときと同様の手順でEccube4のEntity拡張用のTraitを自動生成できます。

@@ -1,9 +1,11 @@
 <?php
 
 /*
- * This file is part of the Symfony MakerBundle package.
+ * This file is part of EC-CUBE
  *
- * (c) Fabien Potencier <fabien@symfony.com>
+ * Copyright(c) EC-CUBE CO.,LTD. All Rights Reserved.
+ *
+ * http://www.ec-cube.co.jp/
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,14 +16,12 @@ namespace Plugin\EccubeMakerBundle\Maker;
 use Plugin\EccubeMakerBundle\Doctrine\EntityTraitGenerator;
 use Plugin\EccubeMakerBundle\Util\TraitSourceManipulator;
 use Symfony\Bundle\MakerBundle\Maker\AbstractMaker;
-use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Symfony\Bundle\MakerBundle\ConsoleStyle;
 use Symfony\Bundle\MakerBundle\DependencyBuilder;
 use Symfony\Bundle\MakerBundle\Doctrine\DoctrineHelper;
 use Symfony\Bundle\MakerBundle\Doctrine\ORMDependencyBuilder;
-use Symfony\Bundle\MakerBundle\Exception\RuntimeCommandException;
 use Symfony\Bundle\MakerBundle\Generator;
 use Symfony\Bundle\MakerBundle\InputAwareMakerInterface;
 use Symfony\Bundle\MakerBundle\InputConfiguration;
@@ -29,21 +29,19 @@ use Symfony\Bundle\MakerBundle\Str;
 use Symfony\Bundle\MakerBundle\Doctrine\EntityRegenerator;
 use Symfony\Bundle\MakerBundle\FileManager;
 use Symfony\Bundle\MakerBundle\Util\ClassDetails;
-use Symfony\Bundle\MakerBundle\Util\ClassSourceManipulator;
 use Symfony\Bundle\MakerBundle\Doctrine\EntityRelation;
 use Symfony\Bundle\MakerBundle\Validator;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
-use Plugin\EccubeMakerBundle\Doctrine\EntityClassGenerator;
 
 /**
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
  * @author Ryan Weaver <weaverryan@gmail.com>
  * @author Kévin Dunglas <dunglas@gmail.com>
+ * @author Akira Kurozumi <info@a-zumi.net>
  */
 final class EccubeMakeTrait extends AbstractMaker implements InputAwareMakerInterface
 {
@@ -72,8 +70,8 @@ final class EccubeMakeTrait extends AbstractMaker implements InputAwareMakerInte
     public function configureCommand(Command $command, InputConfiguration $inputConf)
     {
         $command
-            ->setDescription('Creates or updates a Eccube entity trait')
-            ->addArgument('name', InputArgument::OPTIONAL, sprintf('Class name of the entity to create or update (e.g. <fg=yellow>%s</>)', Str::asClassName(Str::getRandomTerm())))
+            ->setDescription('Creates or updates a ec-cube entity trait')
+            ->addArgument('name', InputArgument::OPTIONAL, sprintf('FQCN (e.g. <fg=yellow>%s</>)', 'Eccube\Entity\Product'))
             ->addOption('overwrite', null, InputOption::VALUE_NONE, 'Overwrite any existing getter/setter methods')
             ->setHelp(file_get_contents(__DIR__.'/../Resource/help/MakeTrait.txt'))
         ;
@@ -98,9 +96,9 @@ final class EccubeMakeTrait extends AbstractMaker implements InputAwareMakerInte
     {
         $overwrite = $input->getOption('overwrite');
 
-        $class = "\\".$input->getArgument('name');
+        $class = '\\'.$input->getArgument('name');
         $entityClassDetails = $generator->createClassNameDetails(
-            (new \ReflectionClass(new $class))->getShortName()."Trait",
+            (new \ReflectionClass(new $class()))->getShortName().'Trait',
             'Entity\\'
         );
 
