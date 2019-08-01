@@ -42,6 +42,7 @@ use Plugin\EccubeMakerBundle\Doctrine\EntityClassGenerator;
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
  * @author Ryan Weaver <weaverryan@gmail.com>
  * @author Kévin Dunglas <dunglas@gmail.com>
+ * @author Akira Kurozumi <info@a-zumi.net>
  */
 final class EccubeMakeEntity extends AbstractMaker implements InputAwareMakerInterface
 {

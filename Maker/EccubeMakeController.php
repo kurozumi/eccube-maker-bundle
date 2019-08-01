@@ -27,6 +27,7 @@ use Symfony\Bundle\MakerBundle\Generator;
 /**
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
  * @author Ryan Weaver <weaverryan@gmail.com>
+ * @author Akira Kurozumi <info@a-zumi.net>
  */
 final class EccubeMakeController extends AbstractMaker
 {

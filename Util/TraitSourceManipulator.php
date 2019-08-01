@@ -33,6 +33,7 @@ use Symfony\Bundle\MakerBundle\Util\PrettyPrinter;
 
 /**
  * @internal
+ * @author Akira Kurozumi <info@a-zumi.net>
  */
 final class TraitSourceManipulator
 {

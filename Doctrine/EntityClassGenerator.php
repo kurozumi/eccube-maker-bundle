@@ -16,6 +16,7 @@ use Symfony\Bundle\MakerBundle\Util\ClassNameDetails;
 
 /**
  * @internal
+ * @author Akira Kurozumi <info@a-zumi.net>
  */
 final class EntityClassGenerator
 {
