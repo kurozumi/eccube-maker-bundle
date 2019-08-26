@@ -25,11 +25,11 @@ bin/console eccube:make:trait
 bin/console eccube:make:form-extension
 ```
 
-コマンドを実行するとウィザードが開始され、質問に答えていくとCustomizeディレクトに雛形のファイルが生成されます。
+コマンドを実行するとウィザードが開始され、質問に答えていくとCustomizeディレクトに雛形ファイルが自動生成されます。
 
 Entityファイル作るときはゲッターセッターを書かなくて良いので便利です。
 
-## Eccube4のEntityを拡張出来るTraitの自動生成
+## EC-CUBE4のEntityを拡張できるTraitの自動生成
 
 ```
 bin/console eccube:make:trait
@@ -39,15 +39,15 @@ or
 bin/console eccube:make:trait Eccube\Entity\Product
 ```
 
-上記コマンドを実行するとEntityファイルを生成するときと同様の手順でEccube4のEntity拡張用のTraitを自動生成できます。
+上記コマンドを実行するとEntityファイルを生成するときと同様の手順でEC-CUBE4のEntity拡張用のTraitファイルがCustomizeディレクトリに自動生成されます。
 
-## Eccube4のフォームを拡張できるFormExtensionの自動生成
+## EC-CUBE4のFormTypeを拡張できるFormExtensionの自動生成
 
 ```
 bin/console eccube:make:form-extension
 ```
 
-上記のコマンドと実行するとEccube4のフォームを拡張できるFormExtensionを自動生成できます。
+上記のコマンドと実行するとEC-CUBE4のFormTypeを拡張できるFormExtensionがCustomizeディレクトリに自動生成されます。
 ウィザードに従って拡張したいFormTypeを入力または選択して下さい。
 
 ## SymfonyのMakerBundleについて
@@ -68,7 +68,8 @@ bin/console make:subscriber
 services.ymlの場所
 
 ```
-EccubeMakerBundle/Resource/config/services.yml
+EccubeMakerBundle/Resource/config/services.yml　// EC-CUBE4.0.2以前
+EccubeMakerBundle/Resource/config/services_dev.yml　// EC-CUBE4.0.3以降
 ```
 
 プラグインコードがSampleの場合
@@ -80,5 +81,5 @@ maker:
 
 ## 本番環境でのエラー
 
-本番環境ではmakerバンドルが適用されないのでエラーが発生します。  
+EC-CUBE4.0.2以前の場合、本番環境ではエラーが発生します。  
 本番環境へ切り替える場合は、プラグインに同梱されているservices.ymlに記述されている内容をコメントアウトして下さい。
