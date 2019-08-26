@@ -1,0 +1,5 @@
+The <info>%command.name%</info> command creates an form extension.
+
+<info>php %command.full_name% Eccube\Form\Type\Front\EntryType</info>
+
+If the argument is missing, the command will ask for the form type class name interactively.

@@ -11,7 +11,7 @@
 
 namespace Plugin\EccubeMakerBundle\Maker;
 
-use Plugin\EccubeMakerBundle\Doctrine\EntityTraitGenerator;
+use Plugin\EccubeMakerBundle\Generator\EntityTraitGenerator;
 use Plugin\EccubeMakerBundle\Util\TraitSourceManipulator;
 use Symfony\Bundle\MakerBundle\Maker\AbstractMaker;
 use Doctrine\DBAL\Types\Type;
@@ -53,7 +53,7 @@ final class EccubeMakeTrait extends AbstractMaker implements InputAwareMakerInte
         $this->doctrineHelper = $doctrineHelper;
 
         if (null === $generator) {
-            @trigger_error(sprintf('Passing a "%s" instance as 4th argument is mandatory since version 1.5.', Generator::class), E_USER_DEPRECATED);
+            @trigger_error(sprintf('Passing a "%s" instance as 3th argument is mandatory since version 1.5.', Generator::class), E_USER_DEPRECATED);
             $this->generator = new Generator($fileManager, 'App\\');
         } else {
             $this->generator = $generator;

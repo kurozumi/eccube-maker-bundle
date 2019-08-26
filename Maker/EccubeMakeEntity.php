@@ -36,7 +36,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
-use Plugin\EccubeMakerBundle\Doctrine\EntityClassGenerator;
+use Plugin\EccubeMakerBundle\Generator\EntityClassGenerator;
 
 /**
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
@@ -56,7 +56,7 @@ final class EccubeMakeEntity extends AbstractMaker implements InputAwareMakerInt
         $this->doctrineHelper = $doctrineHelper;
 
         if (null === $generator) {
-            @trigger_error(sprintf('Passing a "%s" instance as 4th argument is mandatory since version 1.5.', Generator::class), E_USER_DEPRECATED);
+            @trigger_error(sprintf('Passing a "%s" instance as 3th argument is mandatory since version 1.5.', Generator::class), E_USER_DEPRECATED);
             $this->generator = new Generator($fileManager, 'App\\');
         } else {
             $this->generator = $generator;

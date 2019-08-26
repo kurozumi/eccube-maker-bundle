@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Plugin\EccubeMakerBundle\Doctrine;
+namespace Plugin\EccubeMakerBundle\Generator;
 
 use Symfony\Bundle\MakerBundle\Generator;
 use Symfony\Bundle\MakerBundle\Util\ClassNameDetails;
