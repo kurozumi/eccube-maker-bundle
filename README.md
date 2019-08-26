@@ -22,6 +22,7 @@ bin/console eccube:plugin:enable --code EccubeMakerBundle
 bin/console eccube:make:controller  
 bin/console eccube:make:entity
 bin/console eccube:make:trait
+bin/console eccube:make:form-extension
 ```
 
 コマンドを実行するとウィザードが開始され、質問に答えていくとCustomizeディレクトに雛形のファイルが生成されます。
@@ -39,6 +40,15 @@ bin/console eccube:make:trait Eccube\Entity\Product
 ```
 
 上記コマンドを実行するとEntityファイルを生成するときと同様の手順でEccube4のEntity拡張用のTraitを自動生成できます。
+
+## Eccube4のフォームを拡張できるFormExtensionの自動生成
+
+```
+bin/console eccube:make:form-extension
+```
+
+上記のコマンドと実行するとEccube4のフォームを拡張できるFormExtensionを自動生成できます。
+ウィザードに従って拡張したいFormTypeを入力または選択して下さい。
 
 ## SymfonyのMakerBundleについて
 
