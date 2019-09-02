@@ -19,14 +19,14 @@ final class FormExtensionGenerator
         $this->generator = $generator;
     }
 
-    public function generateFormExtension(ClassNameDetails $classNameDetails, \ReflectionClass $reflectionClass): string
+    public function generateFormExtension(ClassNameDetails $classNameDetails, $extendedFullClassName, $extendedClassName): string
     {
         $formExtensionPath = $this->generator->generateClass(
             $classNameDetails->getFullName(),
             __DIR__.'/../Resource/skeleton/form/Extension.tpl.php',
             [
-                "extended_full_class_name" => $reflectionClass->getNamespaceName().'\\'.$reflectionClass->getShortName(),
-                "extended_class_name" => $reflectionClass->getShortName()
+                "extended_full_class_name" => $extendedFullClassName,
+                "extended_class_name" => $extendedClassName
             ]
         );
 

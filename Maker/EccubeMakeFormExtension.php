@@ -119,18 +119,24 @@ final class EccubeMakeFormExtension extends AbstractMaker
     public function generate(InputInterface $input, ConsoleStyle $io, Generator $generator)
     {
         // TODO: Implement generate() method.
-        $class = '\\'.$input->getArgument('name');
-        $formTypeClassDetails = $generator->createClassNameDetails(
-            (new \ReflectionClass(new $class()))->getShortName().'Extension',
-            'Form\\Extension\\'
+        $extendedFullClassName = $input->getArgument('name');
+
+        $explodeExtendedFullClassName = explode('\\', $extendedFullClassName);
+        $extendedShortClassName = array_pop($explodeExtendedFullClassName);
+
+        $formTypeClassNameDetails = $generator->createClassNameDetails(
+            $extendedShortClassName,
+            'Form\\Extension\\',
+            'Extension'
         );
 
-        $classExists = class_exists($formTypeClassDetails->getFullName());
+        $classExists = class_exists($formTypeClassNameDetails->getFullName());
         if (!$classExists) {
             $formExtensionGenerator = new FormExtensionGenerator($generator);
             $entityPath = $formExtensionGenerator->generateFormExtension(
-                $formTypeClassDetails,
-                (new \ReflectionClass(new $class()))
+                $formTypeClassNameDetails,
+                $extendedFullClassName,
+                $extendedShortClassName
             );
 
             $generator->writeChanges();
