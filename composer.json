@@ -1,6 +1,6 @@
 {
   "name": "ec-cube/EccubeMakerBundle",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "EccubeMakerBundle",
   "type": "eccube-plugin",
   "require": {
