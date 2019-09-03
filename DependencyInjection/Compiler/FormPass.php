@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Plugin\EccubeMakerBundle\DependencyInjection;
+namespace Plugin\EccubeMakerBundle\DependencyInjection\Compiler;
 
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
