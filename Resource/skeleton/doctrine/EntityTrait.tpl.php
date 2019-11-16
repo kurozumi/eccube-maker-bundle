@@ -6,8 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Eccube\Annotation\EntityExtension;
 
 /**
-* @EntityExtension("<?= $entity_extension; ?>")
-*/
+ * @EntityExtension("<?= $entity_extension; ?>")
+ */
 trait <?= $class_name; ?>
 {
 }
