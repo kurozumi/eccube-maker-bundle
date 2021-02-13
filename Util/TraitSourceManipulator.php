@@ -1,9 +1,10 @@
 <?php
-
-/*
- * This file is part of the Symfony MakerBundle package.
+/**
+ * This file is part of EccubeMakerBundle
  *
- * (c) Fabien Potencier <fabien@symfony.com>
+ * Copyright(c) Akira Kurozumi <info@a-zumi.net>
+ *
+ * https://a-zumi.net
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
