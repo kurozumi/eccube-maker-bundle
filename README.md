@@ -7,12 +7,6 @@ makerコマンドで生成したファイルはapp/Customizeディレクトリ�
 ## インストール
 
 app/Plugin内にcloneすれば多分動くはずです。  
-動かなかったら以下のコマンドを実行して下さい。
-
-```
-bin/console eccube:plugin:install --code EccubeMakerBundle
-bin/console eccube:plugin:enable --code EccubeMakerBundle
-```
 
 ## コマンド
 
