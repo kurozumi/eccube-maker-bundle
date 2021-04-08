@@ -3,7 +3,7 @@
 namespace <?= $namespace; ?>;
 
 use <?= $entity_full_class_name; ?>;
-use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\Common\Persistence\ManagerRegistry;
 use Eccube\Repository\AbstractRepository;
 
 /**
@@ -14,7 +14,7 @@ use Eccube\Repository\AbstractRepository;
 */
 class <?= $class_name; ?> extends AbstractRepository
 {
-    public function __construct(RegistryInterface $registry)
+    public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, <?= $entity_class_name; ?>::class);
     }
