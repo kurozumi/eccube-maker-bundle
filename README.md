@@ -37,7 +37,7 @@ bin/console make:subscriber
 services.ymlの場所
 
 ```
-EccubeMakerBundle/Resource/config/services_dev.yml
+app/Plugin/EccubeMakerBundle/Resource/config/services_dev.yml
 ```
 
 プラグインコードがSampleの場合
