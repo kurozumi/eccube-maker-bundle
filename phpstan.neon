@@ -1,8 +1,8 @@
 parameters:
   level: 1
   ignoreErrors:
-      - 'Variable $namespace might not be defined.'
-      - 'Variable $class_name might not be defined.'
-      - 'Variable $table_name might not be defined.'
-      - 'Variable $repository_full_class_name might not be defined.'
-      - 'Variable $entity_full_class_name might not be defined.'
+      - 'Variable \$namespace might not be defined.'
+      - 'Variable \$class_name might not be defined.'
+      - 'Variable \$table_name might not be defined.'
+      - 'Variable \$repository_full_class_name might not be defined.'
+      - 'Variable \$entity_full_class_name might not be defined.'
