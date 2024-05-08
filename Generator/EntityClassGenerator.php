@@ -1,5 +1,6 @@
 <?php
-/**
+
+/*
  * This file is part of EccubeMakerBundle
  *
  * Copyright(c) Akira Kurozumi <info@a-zumi.net>
@@ -13,22 +14,24 @@
 namespace Plugin\EccubeMakerBundle\Generator;
 
 use Symfony\Bundle\MakerBundle\Generator;
+use Symfony\Bundle\MakerBundle\Str;
 use Symfony\Bundle\MakerBundle\Util\ClassNameDetails;
 
-/**
- * @internal
- * @author Akira Kurozumi <info@a-zumi.net>
- */
 final class EntityClassGenerator
 {
-    private $generator;
+    private Generator $generator;
 
     public function __construct(Generator $generator)
     {
         $this->generator = $generator;
     }
 
-    public function generateEntityClass(ClassNameDetails $entityClassDetails, bool $apiResource): string
+    /**
+     * @param ClassNameDetails $entityClassDetails
+     * @return string
+     * @throws \Exception
+     */
+    public function generateEntityClass(ClassNameDetails $entityClassDetails): string
     {
         $repoClassDetails = $this->generator->createClassNameDetails(
             $entityClassDetails->getRelativeName(),
@@ -40,8 +43,8 @@ final class EntityClassGenerator
             $entityClassDetails->getFullName(),
             __DIR__.'/../Resource/skeleton/doctrine/Entity.tpl.php',
             [
+                'table_name' => $this->generateTableName($entityClassDetails),
                 'repository_full_class_name' => $repoClassDetails->getFullName(),
-                'api_resource' => $apiResource,
             ]
         );
 
@@ -57,5 +60,16 @@ final class EntityClassGenerator
         );
 
         return $entityPath;
+    }
+
+    /**
+     * @param ClassNameDetails $entityClassDetails
+     * @return string
+     */
+    protected function generateTableName(ClassNameDetails $entityClassDetails): string
+    {
+        return Str::asSnakeCase(
+            $this->generator->getRootNamespace().'\\'.$entityClassDetails->getShortName()
+        );
     }
 }

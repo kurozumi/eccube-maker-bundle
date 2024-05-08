@@ -1,9 +1,0 @@
-The <info>%command.name%</info> command creates or updates an entity trait.
-
-<info>php %command.full_name% Eccube\Entity\Product</info>
-
-If the argument is missing, the command will ask for the entity class name interactively.
-
-You can also *overwrite* any existing methods:
-
-<info>php %command.full_name% --regenerate --overwrite</info>

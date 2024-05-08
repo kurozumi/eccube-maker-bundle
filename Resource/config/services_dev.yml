@@ -1,2 +1,19 @@
 maker:
-    root_namespace: 'Customize'
+  root_namespace: 'Customize'
+
+services:
+  eccube.maker.make_entity:
+    class: Plugin\EccubeMakerBundle\Maker\EccubeMakeEntity
+    arguments:
+      - '@maker.file_manager'
+      - '@maker.doctrine_helper'
+      - '@Plugin\EccubeMakerBundle\Generator\EntityClassGenerator'
+    tags: ['maker.command']
+
+  eccube.maker.make_text:
+    class: Plugin\EccubeMakerBundle\Maker\EccubeMakeTest
+    tags: ['maker.command']
+
+  Plugin\EccubeMakerBundle\Generator\EntityClassGenerator:
+    arguments:
+      - '@maker.generator'

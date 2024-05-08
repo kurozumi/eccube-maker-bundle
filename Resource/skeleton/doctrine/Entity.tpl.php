@@ -1,27 +1,32 @@
-<?= "<?php\n" ?>
+<?php echo "<?php\n"; ?>
 
-namespace <?= $namespace ?>;
+namespace <?php echo $namespace; ?>;
 
-<?php if ($api_resource): ?>use ApiPlatform\Core\Annotation\ApiResource;
-<?php endif ?>
 use Doctrine\ORM\Mapping as ORM;
+use Eccube\Entity\AbstractEntity;
 
-/**
-<?php if ($api_resource): ?> * @ApiResource()
-<?php endif ?>
-* @ORM\Entity(repositoryClass="<?= $repository_full_class_name ?>")
-*/
-class <?= $class_name; ?> extends \Eccube\Entity\AbstractEntity
-{
+if(!class_exists(<?php echo $class_name; ?>::class)) {
     /**
-    * @ORM\Column(name="id", type="integer", options={"unsigned":true})
-    * @ORM\Id()
-    * @ORM\GeneratedValue(strategy="IDENTITY")
+    * @ORM\Table(name="<?php echo $table_name; ?>")
+    * @ORM\Entity(repositoryClass="<?php echo $repository_full_class_name; ?>")
+    * @ORM\InheritanceType("SINGLE_TABLE")
+    * @ORM\DiscriminatorColumn(name="discriminator_type", type="string", length=255)
+    * @ORM\HasLifecycleCallbacks()
     */
-    private $id;
-
-    public function getId(): ?int
+    class <?php echo $class_name; ?> extends AbstractEntity
     {
-        return $this->id;
+        /**
+        * @var int
+        *
+        * @ORM\Column(name="id", type="integer", options={"unsigned":true})
+        * @ORM\Id()
+        * @ORM\GeneratedValue(strategy="IDENTITY")
+        */
+        private $id;
+
+        public function getId(): int
+        {
+            return $this->id;
+        }
     }
 }
