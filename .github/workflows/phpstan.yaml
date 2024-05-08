@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        eccube-versions: ['4.2', '4.3']
+        eccube-versions: ['4.3']
         php-versions: [ '8.1', '8.2', '8.3' ]
         exclude:
           - eccube-versions: 4.2
