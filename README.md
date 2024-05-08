@@ -7,8 +7,9 @@ makerコマンドで生成したファイルはapp/Customizeディレクトリ�
 ## インストール
 
 ```shell
-cd app/Plugin
-git clone https://github.com/kurozumi/eccube-maker-bundle EccubeMakerBundle
+git clone https://github.com/kurozumi/eccube-maker-bundle app/Plugin/EccubeMakerBundle
+bin/console e:p:i --code EccubeMakerBundle
+bin/console e:p:e --code EccubeMakerBundle
 ```
 
 ## コマンド
