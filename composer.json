@@ -4,7 +4,8 @@
     "description": "EccubeMakerBundle",
     "type": "eccube-plugin",
     "require": {
-        "ec-cube/plugin-installer": "^2.0"
+        "ec-cube/plugin-installer": "^2.0",
+        "php": "^8.1"
     },
     "extra": {
         "code": "EccubeMakerBundle"
