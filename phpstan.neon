@@ -6,3 +6,4 @@ parameters:
       - '#Variable \$table_name might not be defined\.#'
       - '#Variable \$repository_full_class_name might not be defined\.#'
       - '#Variable \$entity_full_class_name might not be defined\.#'
+      - '#Variable \$entity_class_name might not be defined\.#'
